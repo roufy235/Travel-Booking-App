@@ -5,7 +5,8 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="white">#FFFFFF</color>
-    <color name="blue">	#151791</color>
+    <color name="blue">#151791</color>
 
     <color name="blurColor">#8f94fb</color>
+    <color name="gray">#e5e5e5</color>
 </resources>

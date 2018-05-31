@@ -22,4 +22,9 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <style name="button" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="buttonStyle">@style/Widget.AppCompat.Button.Borderless</item>
+        ...
+    </style>
 </resources>

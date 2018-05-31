@@ -12,4 +12,6 @@
     <string name="profile">Profile</string>
     <string name="email">Email</string>
     <string name="you_will_travel_by">You will travel by ?</string>
+    <string name="number_of_passenger">number of passenger</string>
+    <string name="search_flights">Search Flights</string>
 </resources>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/planeair"
     tools:context=".Controllers.WelcomeActivity">
 
     <ImageView
@@ -24,6 +25,7 @@
 
     <FrameLayout
         android:id="@+id/signIn_btn"
+        style="@style/button"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"

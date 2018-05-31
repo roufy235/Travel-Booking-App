@@ -43,6 +43,13 @@
             android:padding="30dp">
 
 
+            <ProgressBar
+                android:id="@+id/signUpProgressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible" />
+
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -50,7 +57,7 @@
 
 
                 <EditText
-                    android:id="@+id/editText4"
+                    android:id="@+id/emailAddressEditTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -67,7 +74,7 @@
 
 
                 <EditText
-                    android:id="@+id/editText"
+                    android:id="@+id/usernameEditTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -82,7 +89,7 @@
                 android:layout_marginTop="40dp">
 
                 <EditText
-                    android:id="@+id/editText2"
+                    android:id="@+id/passwordEditTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -93,11 +100,12 @@
             </android.support.design.widget.TextInputLayout>
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/signUpBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:background="@drawable/btn_gradient"
+                android:onClick="createMyAccount"
                 android:text="@string/sign_up"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />

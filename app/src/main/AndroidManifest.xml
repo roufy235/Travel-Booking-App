@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".Controllers.WelcomeActivity"
-            android:theme="@style/noActionBar">
+            android:theme="@style/noActionBarWithBlue">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,8 +31,10 @@
             android:theme="@style/noActionBarWithBlue" />
         <activity
             android:name=".Controllers.MainActivity"
-            android:theme="@style/noActionBarWithBlue"
-            android:label="@string/title_activity_main"></activity>
+            android:label="@string/title_activity_main"
+            android:theme="@style/noActionBarWithBlue" />
+        <activity android:name=".Controllers.PlaneActivity"
+            android:theme="@style/noActionBarWithBlue"></activity>
     </application>
 
 </manifest>
