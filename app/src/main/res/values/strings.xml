@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Travel</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="explore">Explore</string>
+    <string name="profile">Profile</string>
+    <string name="email">Email</string>
+    <string name="you_will_travel_by">You will travel by ?</string>
+</resources>
