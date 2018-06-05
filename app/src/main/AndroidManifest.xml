@@ -33,7 +33,10 @@
             android:name=".Controllers.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/noActionBarWithBlue" />
-        <activity android:name=".Controllers.PlaneActivity"
+        <activity
+            android:name=".Controllers.PlaneActivity"
+            android:theme="@style/noActionBarWithBlue" />
+        <activity android:name=".Controllers.FlightsResultActivity"
             android:theme="@style/noActionBarWithBlue"></activity>
     </application>
 

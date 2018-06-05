@@ -1,5 +1,6 @@
 package com.example.roufy235.travel.Controllers
 
+import android.content.Intent
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +10,7 @@ import android.widget.Toast
 import com.example.roufy235.travel.R
 import com.jaredrummler.materialspinner.MaterialSpinner
 import kotlinx.android.synthetic.main.activity_plane.*
+import spencerstudios.com.bungeelib.Bungee
 
 class PlaneActivity : AppCompatActivity() {
 
@@ -89,6 +91,7 @@ class PlaneActivity : AppCompatActivity() {
     }
 
     fun searchFlights(view : View) {
-        Toast.makeText(this, "This event will be implemented soon", Toast.LENGTH_LONG).show()
+        startActivity(Intent(this, FlightsResultActivity::class.java))
+        Bungee.fade(this)
     }
 }
