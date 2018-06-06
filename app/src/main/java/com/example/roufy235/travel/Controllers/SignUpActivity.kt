@@ -57,7 +57,7 @@ class SignUpActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         clearForm()
 
-                        mRef.child("Users_info").child(username).push().setValue(FirebaseSignUpModel(email, username, password))
+                        mRef.child("Users_info").child(username).child(mAuth.uid.toString()).setValue(FirebaseSignUpModel(email, username, password))
 
                         signUpProgressBar.visibility = View.INVISIBLE
                         Toast.makeText(this, "Account created", Toast.LENGTH_SHORT).show()

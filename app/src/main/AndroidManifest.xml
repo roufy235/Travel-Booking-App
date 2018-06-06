@@ -32,6 +32,7 @@
         <activity
             android:name=".Controllers.MainActivity"
             android:label="@string/title_activity_main"
+            android:windowSoftInputMode="adjustResize"
             android:theme="@style/noActionBarWithBlue" />
         <activity
             android:name=".Controllers.PlaneActivity"

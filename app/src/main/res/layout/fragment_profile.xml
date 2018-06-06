@@ -8,6 +8,7 @@
 
 
     <RelativeLayout
+        android:id="@+id/relativeLayout4"
         android:layout_width="match_parent"
         android:layout_height="204dp"
         android:background="@color/colorPrimary"
@@ -16,29 +17,95 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView14"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:id="@+id/fragmentUserProfile"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/airplane" />
+
+        <ImageButton
+            android:id="@+id/changeProfilePicture"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@id/fragmentUserProfile"
+            android:layout_alignEnd="@id/fragmentUserProfile"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ic_camera_white_24dp" />
+
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="119dp"
-        android:layout_height="34dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/btn_gradient"
-        android:text="Edit Profile"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout4">
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/textInputLayout"
+                android:layout_width="337dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp">
+
+
+                <EditText
+                    android:id="@+id/fragmentEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress" />
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="337dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="42dp">
+
+                <EditText
+                    android:id="@+id/fragmentUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Username"
+                    android:inputType="textPersonName" />
+            </android.support.design.widget.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/fragmentSaveChanges"
+                android:layout_width="119dp"
+                android:layout_height="34dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/btn_gradient"
+                android:text="Save Changes"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

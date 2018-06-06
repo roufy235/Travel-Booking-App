@@ -15,7 +15,6 @@ import spencerstudios.com.bungeelib.Bungee
 
 class WelcomeActivity : AppCompatActivity() {
 
-
     private lateinit var mFirebaseAnalytics : FirebaseAnalytics
     private lateinit var mAuth : FirebaseAuth
     private lateinit var database : FirebaseDatabase
