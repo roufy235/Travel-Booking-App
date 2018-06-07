@@ -4,7 +4,6 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.Toolbar
-import android.view.View
 import com.example.roufy235.travel.Adapters.FlightsResultRecyclerAdapter
 import com.example.roufy235.travel.Model.FlightsResultModel
 import com.example.roufy235.travel.R
@@ -20,6 +19,14 @@ class FlightsResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_flights_result)
+
+
+        val bundle = intent.extras
+
+        flightsResultLocation.text = bundle.getString("location", "")
+        departureDate.text = bundle.getString("departure", "")
+        numPassenger.text = bundle.getString("passengerNumber", "")
+
 
         toolbar = findViewById(R.id.toolbar)
 
@@ -42,6 +49,8 @@ class FlightsResultActivity : AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this)
 
         recyclerFlightResults.layoutManager = layoutManager
+
+
 
 
     }

@@ -1,5 +1,6 @@
 package com.example.roufy235.travel.Fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.Toolbar
@@ -10,10 +11,11 @@ import com.example.roufy235.travel.R
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.widget.Toast
 import com.example.roufy235.travel.Adapters.ExploreRecyclerAdapter
+import com.example.roufy235.travel.Controllers.FlightsResultActivity
 import com.example.roufy235.travel.Model.ExploreListModel
 import com.example.roufy235.travel.Services.DataServices
+import spencerstudios.com.bungeelib.Bungee
 
 
 class Explore : Fragment() {
@@ -24,6 +26,7 @@ class Explore : Fragment() {
 
     override fun onCreate(savedInstanceState : Bundle?) {
         super.onCreate(savedInstanceState)
+
         dummy()
     }
 
@@ -46,7 +49,11 @@ class Explore : Fragment() {
         (activity as AppCompatActivity).supportActionBar!!.title = "Explore the world"
 
         adapter = ExploreRecyclerAdapter(context, DataServices.exploreList) {exploreListModel ->
-            Toast.makeText(context, "You clicked " + exploreListModel.location, Toast.LENGTH_SHORT).show()
+
+            val intent = Intent(context, FlightsResultActivity::class.java)
+            intent.putExtra("location", exploreListModel.location)
+            startActivity(intent)
+            Bungee.fade(context)
         }
 
         recyclerView = view.findViewById(R.id.exploreRecyclerView)

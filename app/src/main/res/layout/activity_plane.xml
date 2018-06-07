@@ -148,12 +148,12 @@
 
 
             <EditText
-                android:id="@+id/editText4"
+                android:id="@+id/bookNumberOfPassenger"
                 android:layout_width="177dp"
-                android:drawableTint="@color/gray"
-                android:drawableStart="@drawable/ic_perm_identity_black_24dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
+                android:drawableStart="@drawable/ic_perm_identity_black_24dp"
+                android:drawableTint="@color/gray"
                 android:ems="10"
                 android:hint="@string/number_of_passenger"
                 android:inputType="number" />
@@ -179,17 +179,19 @@
 
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/departureBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="departureDate"
                 android:background="@android:color/transparent"
                 android:text="Departure Date"
                 android:textAllCaps="false" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/arrivalBtn"
                 android:textAllCaps="false"
+                android:onClick="arrivalDate"
                 android:background="@android:color/transparent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
