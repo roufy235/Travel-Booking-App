@@ -12,6 +12,7 @@ import android.view.View
 import android.widget.DatePicker
 import android.widget.Toast
 import com.example.roufy235.travel.R
+import com.example.roufy235.travel.Services.VolleyDataServices
 import com.jaredrummler.materialspinner.MaterialSpinner
 import kotlinx.android.synthetic.main.activity_plane.*
 import spencerstudios.com.bungeelib.Bungee
@@ -26,7 +27,7 @@ class PlaneActivity : AppCompatActivity() {
     lateinit var alertDialog : AlertDialog.Builder
 
 
-    var destination : String = "Lagos"
+    var destination : String = "London"
     var flightFrom : String = "Lagos"
     var passengerClass : String? = null
     var realArrivalDate : String? = null
@@ -43,7 +44,7 @@ class PlaneActivity : AppCompatActivity() {
         setContentView(R.layout.activity_plane)
 
         spinner = findViewById(R.id.spinner)
-        spinner.setItems("Lagos", "Abuja")
+        spinner.setItems("Lagos")
         spinner.setOnItemSelectedListener { view, position, id, item ->
 
             flightFrom = item.toString()
@@ -54,7 +55,7 @@ class PlaneActivity : AppCompatActivity() {
 
 
         spinner2 = findViewById(R.id.spinner2)
-        spinner2.setItems("Lagos", "Abuja", "Akure", "Kaduna", "Ibadan")
+        spinner2.setItems("London", "Seattle, United States (US)", "Ottawa, Canada", "Montreal, Canada", "Paris, France", "Dubai, United Arab Emirates")
         spinner2.setOnItemSelectedListener { view, position, id, item ->
 
             destination = item.toString()
@@ -176,6 +177,9 @@ class PlaneActivity : AppCompatActivity() {
 
         if (numberOfPassenger.isNotEmpty() && realArrivalDate != null && realDepartureDate != null) {
 
+            searchFlightsBtn.isEnabled = false
+            searchFlightProgressDialog.visibility = View.VISIBLE
+
 
             val intent = Intent(this, FlightsResultActivity::class.java)
 
@@ -187,8 +191,54 @@ class PlaneActivity : AppCompatActivity() {
             intent.putExtra("location", destination)
             intent.putExtra("passengerClass", passengerClass)
 
-            startActivity(intent)
-            Bungee.fade(this)
+            var location : String = ""
+            var destinationLocal : String = ""
+
+
+            when(flightFrom) {
+                "Lagos" -> {
+                    location = "LOS"
+                }
+            }
+            when(destination) {
+                "London" -> {
+                    destinationLocal = "LON"
+                }
+                "Seattle, United States (US)" -> {
+                    destinationLocal = "SEA"
+                }
+                "Ottawa, Canada" -> {
+                    destinationLocal = "YOW"
+                }
+                "Montreal, Canada" -> {
+                    destinationLocal = "YMQ"
+                }
+                "Paris, France" -> {
+                    destinationLocal = "PAR"
+                }
+                "Dubai, United Arab Emirates" -> {
+                    destinationLocal = "DXB"
+                }
+            }
+
+
+            VolleyDataServices.searchFlights(this, location, destinationLocal){result ->
+                if (result){
+
+                    searchFlightProgressDialog.visibility = View.INVISIBLE
+                    startActivity(intent)
+                    Bungee.fade(this)
+                    Toast.makeText(this, "success", Toast.LENGTH_SHORT).show()
+                    searchFlightsBtn.isEnabled = true
+
+                } else {
+                    searchFlightProgressDialog.visibility = View.INVISIBLE
+                    searchFlightsBtn.isEnabled = true
+                    Toast.makeText(this, "Server Error", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+
         } else {
             Toast.makeText(this, "all fields are required", Toast.LENGTH_SHORT).show()
         }

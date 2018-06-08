@@ -41,7 +41,7 @@ class FlightsResultActivity : AppCompatActivity() {
             Bungee.fade(this)
         }
 
-        dummy()
+        //dummy()
 
         adapter = FlightsResultRecyclerAdapter(this, DataServices.flightsResult)
         recyclerFlightResults.adapter = adapter
