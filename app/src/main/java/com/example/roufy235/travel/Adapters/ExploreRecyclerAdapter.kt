@@ -13,7 +13,6 @@ import com.example.roufy235.travel.R
 class ExploreRecyclerAdapter(val context : Context, val exploreList : ArrayList<ExploreListModel>, val itemClicked : (ExploreListModel) -> Unit) : RecyclerView.Adapter<ExploreRecyclerAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent : ViewGroup?, viewType : Int) : ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.ticket_explore, parent, false)
-
         return ViewHolder(view, itemClicked)
     }
 
@@ -32,10 +31,8 @@ class ExploreRecyclerAdapter(val context : Context, val exploreList : ArrayList<
 
         fun bindView(context : Context, explore : ExploreListModel) {
             val resId = context.resources.getIdentifier(explore.image, "drawable", context.packageName)
-
             location.text = explore.location
             images.setImageResource(resId)
-
             itemView.setOnClickListener { itemClicked(explore) }
         }
     }

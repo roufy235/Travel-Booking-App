@@ -9,12 +9,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.example.roufy235.travel.Model.FlightsResultModel
 import com.example.roufy235.travel.R
-import org.w3c.dom.Text
 
 class FlightsResultRecyclerAdapter(val context : Context, val flightsResults : ArrayList<FlightsResultModel>) : RecyclerView.Adapter<FlightsResultRecyclerAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent : ViewGroup?, viewType : Int) : ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.ticket_flight_results, parent, false)
-
         return ViewHolder(view)
     }
 
@@ -36,7 +34,6 @@ class FlightsResultRecyclerAdapter(val context : Context, val flightsResults : A
 
         fun bindView(context : Context, flights : FlightsResultModel) {
             val resId = context.resources.getIdentifier(flights.carrierImage, "drawable", context.packageName)
-
             carrierImage.setImageResource(resId)
             carrierName.text = flights.carrierName
             carrierOrigin.text = flights.carrierOrigin

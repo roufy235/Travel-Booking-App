@@ -37,7 +37,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:paddingTop="10dp"
-                    android:text="Air Costa"
+                    android:text="@string/air_costa"
                     android:textColor="@android:color/black"
                     android:textSize="17sp" />
 
@@ -46,7 +46,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
-                    android:text="India" />
+                    android:text="@string/india" />
 
                 <TextView
                     android:id="@+id/amount"
@@ -54,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginEnd="8dp"
-                    android:text="200k" />
+                    android:text="@string/_200k" />
             </LinearLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>

@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/imageView5"
                 android:layout_centerHorizontal="true"
-                android:text="Plane"
+                android:text="@string/plane"
                 android:textStyle="bold" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
@@ -97,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/imageView6"
                 android:layout_centerHorizontal="true"
-                android:text="Train"
+                android:text="@string/train"
                 android:textStyle="bold" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
@@ -135,7 +135,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/imageView7"
                 android:layout_centerHorizontal="true"
-                android:text="Car"
+                android:text="@string/car"
                 android:textStyle="bold" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>

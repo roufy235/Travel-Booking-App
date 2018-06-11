@@ -78,8 +78,8 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_toEndOf="@id/imageView9"
-                        android:text="Dubai, UAE."
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:text="Dubai, UAE." />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -102,8 +102,8 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_toEndOf="@id/imageView10"
-                        android:text="Apr 11 2018"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:text="Apr 11 2018" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -126,8 +126,8 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_toEndOf="@id/imageView11"
-                        android:text="1 Passenger"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:text="1 Passenger" />
                 </RelativeLayout>
 
             </LinearLayout>

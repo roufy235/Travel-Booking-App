@@ -38,7 +38,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:fontFamily="monospace"
-            android:text="Greece"
+            android:text="@string/greece"
             android:textColor="@color/white"
             android:textSize="22sp"
             android:textStyle="bold" />

@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Click to proceed"
+            android:text="@string/click_to_proceed"
             android:textColor="#ffffff"
             android:textStyle="bold" />
 

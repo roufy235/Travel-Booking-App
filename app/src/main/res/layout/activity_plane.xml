@@ -53,7 +53,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/btn_gradient"
                 android:onClick="planeRoundClicked"
-                android:text="Round"
+                android:text="@string/round"
                 android:textColor="@color/white" />
 
             <Button
@@ -63,7 +63,7 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:onClick="planeOneWayClicked"
-                android:text="One-way"
+                android:text="@string/one_way"
                 android:textColor="@color/gray" />
 
             <Button
@@ -73,7 +73,7 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:onClick="planeMultiClicked"
-                android:text="Multi"
+                android:text="@string/multi"
                 android:textColor="@color/gray" />
         </LinearLayout>
 
@@ -185,7 +185,7 @@
                 android:layout_weight="1"
                 android:onClick="departureDate"
                 android:background="@android:color/transparent"
-                android:text="Departure Date"
+                android:text="@string/departure_date"
                 android:textAllCaps="false" />
 
             <Button
@@ -196,7 +196,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Arrival Date" />
+                android:text="@string/arrival_date" />
         </LinearLayout>
         <View
             android:layout_width="match_parent"

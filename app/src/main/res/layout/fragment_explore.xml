@@ -36,7 +36,7 @@
         android:background="@drawable/background_radius_white"
         android:drawableTint="@color/gray"
         android:ems="10"
-        android:hint="Search"
+        android:hint="@string/search"
         android:inputType="textPersonName"
         android:drawableEnd="@drawable/ic_search_black_24dp"
         android:paddingEnd="10dp"
