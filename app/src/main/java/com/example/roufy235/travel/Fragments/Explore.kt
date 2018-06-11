@@ -30,13 +30,17 @@ class Explore : Fragment() {
         dummy()
     }
 
+    override fun onResume() {
+        super.onResume()
+        DataServices.flightsResult.clear()
+    }
+
     fun dummy() {
-        DataServices.exploreList.add(ExploreListModel("Greece", "program"))
+        DataServices.exploreList.add(ExploreListModel("Seattle, United States (US)", "program"))
         DataServices.exploreList.add(ExploreListModel("London", "program"))
-        DataServices.exploreList.add(ExploreListModel("Nigeria", "greece"))
-        DataServices.exploreList.add(ExploreListModel("Canada", "canada"))
-        DataServices.exploreList.add(ExploreListModel("Qatar", "canada"))
-        DataServices.exploreList.add(ExploreListModel("South Korea", "greece"))
+        DataServices.exploreList.add(ExploreListModel("Ottawa, Canada", "greece"))
+        DataServices.exploreList.add(ExploreListModel("Montreal, Canada", "canada"))
+        DataServices.exploreList.add(ExploreListModel("Paris, France", "canada"))
     }
 
     override fun onCreateView(inflater : LayoutInflater?, container : ViewGroup?, savedInstanceState : Bundle?) : View? {
@@ -51,7 +55,9 @@ class Explore : Fragment() {
         adapter = ExploreRecyclerAdapter(context, DataServices.exploreList) {exploreListModel ->
 
             val intent = Intent(context, FlightsResultActivity::class.java)
+            intent.putExtra("from", "Lagos")
             intent.putExtra("location", exploreListModel.location)
+            intent.putExtra("explore", true)
             startActivity(intent)
             Bungee.fade(context)
         }

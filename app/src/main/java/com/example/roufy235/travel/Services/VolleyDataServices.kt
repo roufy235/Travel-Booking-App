@@ -4,6 +4,7 @@ import android.content.Context
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.example.roufy235.travel.Model.FlightDetailsHolder
 import com.example.roufy235.travel.Model.FlightsResultModel
 import com.example.roufy235.travel.Utilities.URL
 import org.json.JSONException
@@ -21,6 +22,7 @@ object VolleyDataServices {
                 val jsonArray = response.getJSONArray("best_prices")
 
                 DataServices.flightsResult.clear()
+                DataServices.saveAllFlightResult.clear()
                 var imageName : String?
                 var country : String?
 
@@ -29,6 +31,10 @@ object VolleyDataServices {
                     val availableFlight = jsonArray.getJSONObject(key)
 
                     val carrierName = availableFlight.getString("gate")
+
+                    val distance = availableFlight.getString("distance")
+                    val depart_date = availableFlight.getString("depart_date")
+                    val return_date = availableFlight.getString("return_date")
 
                     val resultDestination = availableFlight.getString("destination")
 
@@ -83,6 +89,8 @@ object VolleyDataServices {
                     val price = (availableFlight.getDouble("value") * 5.78).toInt().toString()
 
                     DataServices.flightsResult.add(FlightsResultModel(carrierName, country, imageName, price))
+
+                    DataServices.saveAllFlightResult.add(FlightDetailsHolder(distance, depart_date, return_date, price))
 
                     //println(availableFlight.getString("value"))
                 }

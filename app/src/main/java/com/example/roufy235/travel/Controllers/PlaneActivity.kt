@@ -189,6 +189,7 @@ class PlaneActivity : AppCompatActivity() {
             intent.putExtra("trip", lastChecked)
             intent.putExtra("from", flightFrom)
             intent.putExtra("location", destination)
+            intent.putExtra("explore", false)
             intent.putExtra("passengerClass", passengerClass)
 
             var location : String = ""
@@ -216,7 +217,7 @@ class PlaneActivity : AppCompatActivity() {
                 "Paris, France" -> {
                     destinationLocal = "PAR"
                 }
-                "Dubai, United Arab Emirates" -> {
+                "explore" -> {
                     destinationLocal = "DXB"
                 }
             }
@@ -228,7 +229,7 @@ class PlaneActivity : AppCompatActivity() {
                     searchFlightProgressDialog.visibility = View.INVISIBLE
                     startActivity(intent)
                     Bungee.fade(this)
-                    Toast.makeText(this, "success", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, "success", Toast.LENGTH_SHORT).show()
                     searchFlightsBtn.isEnabled = true
 
                 } else {

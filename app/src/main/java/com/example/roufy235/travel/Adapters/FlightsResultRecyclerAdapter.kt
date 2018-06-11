@@ -10,10 +10,12 @@ import android.widget.TextView
 import com.example.roufy235.travel.Model.FlightsResultModel
 import com.example.roufy235.travel.R
 
-class FlightsResultRecyclerAdapter(val context : Context, val flightsResults : ArrayList<FlightsResultModel>) : RecyclerView.Adapter<FlightsResultRecyclerAdapter.ViewHolder>() {
+class FlightsResultRecyclerAdapter(val context : Context, val flightsResults : ArrayList<FlightsResultModel>, val itemClicked : (FlightsResultModel, Int) -> Unit) : RecyclerView.Adapter<FlightsResultRecyclerAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent : ViewGroup?, viewType : Int) : ViewHolder {
+
         val view = LayoutInflater.from(context).inflate(R.layout.ticket_flight_results, parent, false)
-        return ViewHolder(view)
+
+        return ViewHolder(view, itemClicked)
     }
 
     override fun getItemCount() : Int {
@@ -25,7 +27,7 @@ class FlightsResultRecyclerAdapter(val context : Context, val flightsResults : A
     }
 
 
-    inner class ViewHolder(itemView : View?) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView : View?,  val itemClicked : (FlightsResultModel, Int) -> Unit) : RecyclerView.ViewHolder(itemView) {
         val carrierName : TextView = itemView!!.findViewById(R.id.carrierName)
         val carrierImage : ImageView = itemView!!.findViewById(R.id.carrierImage)
         val carrierOrigin : TextView = itemView!!.findViewById(R.id.country)
@@ -38,6 +40,8 @@ class FlightsResultRecyclerAdapter(val context : Context, val flightsResults : A
             carrierName.text = flights.carrierName
             carrierOrigin.text = flights.carrierOrigin
             amount.text = flights.amount
+
+            itemView.setOnClickListener { itemClicked(flights, adapterPosition) }
         }
     }
 }

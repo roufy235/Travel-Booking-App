@@ -32,12 +32,15 @@
         <activity
             android:name=".Controllers.MainActivity"
             android:label="@string/title_activity_main"
-            android:windowSoftInputMode="adjustResize"
-            android:theme="@style/noActionBarWithBlue" />
+            android:theme="@style/noActionBarWithBlue"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".Controllers.PlaneActivity"
             android:theme="@style/noActionBarWithBlue" />
-        <activity android:name=".Controllers.FlightsResultActivity"
+        <activity
+            android:name=".Controllers.FlightsResultActivity"
+            android:theme="@style/noActionBarWithBlue" />
+        <activity android:name=".Controllers.FlightDetailsActivity"
             android:theme="@style/noActionBarWithBlue"></activity>
     </application>
 
